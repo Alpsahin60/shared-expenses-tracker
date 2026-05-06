@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { API_BASE } from "../config";
 
 type Person = {
   id: number;
@@ -6,8 +7,8 @@ type Person = {
   email: string | null;
 };
 
-const PEOPLE_API = "http://localhost:3002/api/people";
-const EXPENSES_API = "http://localhost:3002/api/expenses";
+const PEOPLE_API = `${API_BASE}/api/people`;
+const EXPENSES_API = `${API_BASE}/api/expenses`;
 
 export default function AddExpenseForm({ onExpenseAdded }: { onExpenseAdded: () => void }) {
   const [description, setDescription] = useState("");

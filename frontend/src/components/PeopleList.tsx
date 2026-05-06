@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { API_BASE } from "../config";
 
 type Person = {
   id: number;
@@ -6,7 +7,7 @@ type Person = {
   email: string | null;
 };
 
-const API_URL = "http://localhost:3002/api/people";
+const API_URL = `${API_BASE}/api/people`;
 
 export default function PeopleList({ onPersonDeleted }: { onPersonDeleted?: () => void }) {
   const [people, setPeople] = useState<Person[]>([]);

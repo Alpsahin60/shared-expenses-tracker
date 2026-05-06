@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE } from "../config";
 import "../styles/ExpensesList.css";
 
 type Expense = {
@@ -19,9 +20,9 @@ type Participant = {
   person_id: number;
 };
 
-const EXPENSES_API = "http://localhost:3002/api/expenses";
-const PEOPLE_API = "http://localhost:3002/api/people";
-const PARTICIPANTS_API = "http://localhost:3002/api/expense-participants";
+const EXPENSES_API = `${API_BASE}/api/expenses`;
+const PEOPLE_API = `${API_BASE}/api/people`;
+const PARTICIPANTS_API = `${API_BASE}/api/expense-participants`;
 
 export default function ExpensesList() {
   const [expenses, setExpenses] = useState<Expense[]>([]);

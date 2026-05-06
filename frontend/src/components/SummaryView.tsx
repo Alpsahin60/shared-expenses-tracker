@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_BASE } from "../config";
 
 type SummaryItem = {
   id: number;
@@ -6,7 +7,7 @@ type SummaryItem = {
   balance: number;
 };
 
-const SUMMARY_API = "http://localhost:3002/api/summary";
+const SUMMARY_API = `${API_BASE}/api/summary`;
 
 export default function SummaryView() {
   const [summary, setSummary] = useState<SummaryItem[]>([]);

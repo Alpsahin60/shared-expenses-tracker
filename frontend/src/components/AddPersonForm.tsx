@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { API_BASE } from "../config";
 import '../styles/AddPersonForm.css';
 
-const API_URL = "http://localhost:3002/api/people";
+const API_URL = `${API_BASE}/api/people`;
 
 export default function AddPersonForm({ onPersonAdded }: { onPersonAdded: () => void }) {
   const [name, setName] = useState("");

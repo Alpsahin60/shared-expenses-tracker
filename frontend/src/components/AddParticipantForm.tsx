@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { API_BASE } from "../config";
 
 type Person = {
   id: number;
@@ -10,9 +11,9 @@ type Expense = {
   description: string;
 };
 
-const PEOPLE_API = "http://localhost:3002/api/people";
-const EXPENSES_API = "http://localhost:3002/api/expenses";
-const PARTICIPANTS_API = "http://localhost:3002/api/expense-participants";
+const PEOPLE_API = `${API_BASE}/api/people`;
+const EXPENSES_API = `${API_BASE}/api/expenses`;
+const PARTICIPANTS_API = `${API_BASE}/api/expense-participants`;
 
 export default function AddParticipantForm({ onParticipantAdded }: { onParticipantAdded: () => void }) {
   const [people, setPeople] = useState<Person[]>([]);
